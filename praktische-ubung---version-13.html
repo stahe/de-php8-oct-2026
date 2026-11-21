@@ -1,0 +1,1852 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Die Sprache [PHP 8] anhand von Beispielen lernen">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/de-php8-oct-2026/praktische-ubung---version-13.html">
+      
+      
+        <link rel="prev" href="praktische-ubung---version-12.html">
+      
+      
+        <link rel="next" href="fazit.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>24. Praktische Übung – Version 13 - Die Sprache [PHP 8] anhand von Beispielen lernen</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Die Sprache [PHP 8] anhand von Beispielen lernen";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#24-praktische-ubung-version-13" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Die Sprache [PHP 8] anhand von Beispielen lernen" class="md-header__button md-logo" aria-label="Die Sprache [PHP 8] anhand von Beispielen lernen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Die Sprache [PHP 8] anhand von Beispielen lernen
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              24. Praktische Übung – Version 13
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum dunklen Modus wechseln"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Zum dunklen Modus wechseln" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum hellen Modus wechseln"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Zum hellen Modus wechseln" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/de-php8-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Die Sprache [PHP 8] anhand von Beispielen lernen" class="md-nav__button md-logo" aria-label="Die Sprache [PHP 8] anhand von Beispielen lernen" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Die Sprache [PHP 8] anhand von Beispielen lernen
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/de-php8-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Willkommen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="einleitung.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Einleitung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="einrichtung-einer-entwicklungsumgebung.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Einrichtung einer Entwicklungsumgebung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="die-grundlagen-von-php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Die Grundlagen von PHP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="anwendungsubung---versionen-1-und-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Anwendungsübung – Versionen 1 und 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="die-klassen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Die Klassen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="interfaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ausnahmen-und-fehler.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Ausnahmen und Fehler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="praktische-ubung---version-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Praktische Übung – Version 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="traits.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Traits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="anwendungen-in-schichten.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Anwendungen in Schichten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ubungsanwendung---version-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Übungsanwendung – Version 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="das-datenbankmanagementsystem-mysql-verwenden.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Das Datenbankmanagementsystem MySQL verwenden
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="praktische-ubung---version-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Praktische Übung – Version 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ubung-zur-anwendung---version-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Übung zur Anwendung – Version 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ubung-zur-anwendung---version-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Übung zur Anwendung – Version 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="netzwerkfunktionen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Netzwerkfunktionen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="webservices.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Webservices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="praktische-ubung---version-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Praktische Übung – Version 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ubungsaufgabe---version-9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Übungsaufgabe – Version 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ubungsanwendung---version-10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Übungsanwendung – Version 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="xml-dokumente-verarbeiten.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. XML-Dokumente verarbeiten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="praktische-ubung---version-11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Praktische Übung – Version 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="praktische-ubung---version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Praktische Übung – Version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Praktische Übung – Version 13
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="praktische-ubung---version-13.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Praktische Übung – Version 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#241-das-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.1. Das Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#242-die-neue-verzeichnisstruktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.2. Die neue Verzeichnisstruktur
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#243-codeanderungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.3. Codeänderungen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="24.3. Codeänderungen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2431-die-konfigurationsdatei" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.3.1. Die Konfigurationsdatei
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2432-der-hauptcontroller-publicmainphp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.3.2. Der Hauptcontroller [public/main.php]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2433-das-banner-der-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.3.3. Das Banner der Views
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#244-die-datei-htaccess-der-anwendung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.4. Die Datei [.htaccess] der Anwendung
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="24.4. Die Datei [.htaccess] der Anwendung">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2441-curl-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.4.1. [curl]-Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#245-in-der-produktion-das-dokumentenstammverzeichnis-ist-der-ordner-public" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.5. In der Produktion: Das Dokumentenstammverzeichnis ist der Ordner [public]
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fazit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Fazit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="24-praktische-ubung-version-13">24. <span style="color: #2e74b5">Praktische Übung – Version 13</span></h1>
+<p>Version 13 bringt nur wenige Änderungen: Sie sichert den Zugriff auf die Dateien der Anwendung. Neue Funktionen kommen nicht hinzu: Die Aktionen, die JSON-, XML- und HTML-Antworten sowie die Views sind dieselben wie in Version 12. Geändert haben sich die Dateistruktur auf der Festplatte und die Konfiguration des Servers <em>[Apache]</em>.</p>
+<h2 id="241-das-problem">24.1. <span style="color: #2e74b5">Das Problem</span></h2>
+<p>Im Kurs PHP 7 konnten Sie die URL der Konfigurationsdatei von Version 12 anfordern, und der Browser zeigte sie an. Diese Datei <em>[config.json]</em> enthält jedoch sensible Informationen, etwa die Zugangsdaten der Benutzer, die die Anwendung verwenden dürfen. Sie darf für Benutzer nicht zugänglich sein.</p>
+<p>In unserer Version 12 ist diese Datei bereits geschützt: Sie befindet sich im Ordner <em>[Data]</em>, dem die Datei <em>[.htaccess]</em> – eingeführt mit Version 8 – den Zugriff verwehrt (Direktive <strong><em>[Require all denied]</em></strong>). Dieser Schutz wird jedoch von Fall zu Fall angewendet: Wir sperren nur, was wir gezielt gesperrt haben, und alles andere wird ausgeliefert. Dabei gibt es noch vieles, was nicht angezeigt werden sollte. So kann der Browser beispielsweise direkt eine View anfordern, ohne den Hauptcontroller zu durchlaufen:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>&gt; curl -i http://localhost/php8-oct-2026/scripts-web/tax/version-12/Views/view-tax-calculation.php
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>HTTP/1.1 200 OK
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>Server: Apache/2.4.58
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>X-Powered-By: PHP/8.5.11
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>Vary: Accept-Encoding
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>Content-Length: 1017
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>Content-Type: text/html; charset=UTF-8
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>&lt;br /&gt;
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>&lt;b&gt;Warning&lt;/b&gt;:  Undefined variable $request in &lt;b&gt;.../php8-oct-2026/scripts-web/tax/version-12/Views/view-tax-calculation.php&lt;/b&gt; on line &lt;b&gt;9&lt;/b&gt;&lt;br /&gt;
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>&lt;br /&gt;
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>&lt;b&gt;Warning&lt;/b&gt;:  Undefined variable $content in &lt;b&gt;.../php8-oct-2026/scripts-web/tax/version-12/Views/view-tax-calculation.php&lt;/b&gt; on line &lt;b&gt;9&lt;/b&gt;&lt;br /&gt;
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>&lt;br /&gt;
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>&lt;b&gt;Fatal error&lt;/b&gt;:  Uncaught TypeError: getModelForThisView(): Argument #1 ($request) must be of type Symfony\Component\HttpFoundation\Request, null given, called in .../php8-oct-2026/scripts-web/tax/version-12/Views/view-tax-calculation.php on line 9 and defined in .../php8-oct-2026/scripts-web/tax/version-12/Views/view-tax-calculation.php:11
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>Stack trace:
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>#0 .../php8-oct-2026/scripts-web/tax/version-12/Views/view-tax-calculation.php(9): getModelForThisView(NULL, NULL)
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>#1 {main}
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>  thrown in &lt;b&gt;.../php8-oct-2026/scripts-web/tax/version-12/Views/view-tax-calculation.php&lt;/b&gt; on line &lt;b&gt;11&lt;/b&gt;&lt;br /&gt;
+</code></pre></div></td></tr></table></div>
+<p>Die View wird ohne Kontext ausgeführt: Die Variablen, die normalerweise von der Klasse <em>[HtmlResponse]</em> bereitgestellt werden, existieren nicht. Da <em>[Laragon]</em> für die Entwicklung konfiguriert ist (PHP-Direktive <strong><em>[display_errors=On]</em></strong> ), werden Fehlermeldungen an den Browser gesendet. Sie verraten die Dateipfade auf dem Server sowie die Namen der verwendeten Funktionen und Klassen – alles nützliche Informationen für jeden, der die Anwendung angreifen möchte. Sekundäre Controller, Antwortklassen und die Klassen der Schichten <em>[business]</em> und <em>[dao]</em> können ebenfalls über eine einfache URL ausgeführt werden. Hier definieren sie lediglich eine Klasse, aber es gibt keine Garantie, dass das immer so bleibt.</p>
+<p>Gravierender ist: Der gesamte Ordner <em>[php8-oct-2026]</em> des Kurses liegt im Ordner <em>[www]</em> von <em>[Laragon]</em>. Auch die Konsolenskripte sind über das Web erreichbar, obwohl niemand daran gedacht hat, sie zu schützen:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>&gt; curl -i http://localhost/php8-oct-2026/scripts-console/tax/version-05/Data/database.json
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>HTTP/1.1 200 OK
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>Server: Apache/2.4.58
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>Last-Modified: Thu, 01 Oct 2026 15:46:08 GMT
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>ETag: "39f-65cc950791217"
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>Accept-Ranges: bytes
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>Content-Length: 927
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>Content-Type: application/json
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>{
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>    "dsn": "mysql:host=localhost;dbname=dbtaxes-2019;charset=utf8mb4",
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>    "id": "admtaxes",
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>    "pwd": "pwdtaxes",
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>    "tableBrackets": "tbbrackets",
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>    "colId": "id",
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>    "colLimits": "limits",
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>    "colCoeffR": "coeffr",
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>    "colCoeffN": "coeffn",
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a>    "tableConstants": "tbconstants",
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a>    "colHalfShareQfCeiling": "halfShareQfCeiling",
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a>    "colSingleIncomeCeilingForReduction": "singleIncomeCeilingForReduction",
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a>    "colCoupleIncomeCeilingForReduction": "coupleIncomeCeilingForReduction",
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a>    "colHalfShareReductionValue": "halfShareReductionValue",
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a>    "colSingleDiscountCeiling": "singleDiscountCeiling",
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a>    "colCoupleDiscountCeiling": "coupleDiscountCeiling",
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a>    "colSingleTaxCeilingForDiscount": "singleTaxCeilingForDiscount",
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a>    "colCoupleTaxCeilingForDiscount": "coupleTaxCeilingForDiscount",
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a>    "colTenPercentAllowanceMax": "tenPercentAllowanceMax",
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a>    "colTenPercentAllowanceMin": "tenPercentAllowanceMin"
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a>}
+</code></pre></div></td></tr></table></div>
+<p>Jeder kann Benutzernamen und Passwort des Datenbankbenutzers <em>[dbtaxes-2019]</em> lesen. Die Server-Versionen 8 bis 12 verwenden jedoch diese Datei oder ihr Äquivalent.</p>
+<p>Der richtige Ansatz ist der umgekehrte: Zunächst wird standardmäßig alles gesperrt, dann wird nur das ausdrücklich freigegeben, was von außen erreichbar sein muss. Für unsere Anwendung müssen nur drei Dateien zugänglich sein:</p>
+<ul>
+<li><em>[main.php]</em>, der Hauptcontroller, der alle Anfragen entgegennimmt;</li>
+<li><em>[index.php]</em>, der Einstiegspunkt der HTML-Anwendung, der auf <em>[main.php]</em> weiterleitet;</li>
+<li>das Bild <em>[logo.jpg]</em>, das der Browser per HTTP-Anfrage abruft, wenn er das Banner der View anzeigt.</li>
+</ul>
+<h2 id="242-die-neue-verzeichnisstruktur">24.2. <span style="color: #2e74b5">Die neue Verzeichnisstruktur</span></h2>
+<p>Wir kopieren den Ordner <em>[scripts-web/tax/version-12] in [scripts-web/tax/version-13]</em> und organisieren dann seine Dateien neu:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span>
+<span class="normal"><a href="#__codelineno-2-33">33</a></span>
+<span class="normal"><a href="#__codelineno-2-34">34</a></span>
+<span class="normal"><a href="#__codelineno-2-35">35</a></span>
+<span class="normal"><a href="#__codelineno-2-36">36</a></span>
+<span class="normal"><a href="#__codelineno-2-37">37</a></span>
+<span class="normal"><a href="#__codelineno-2-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>scripts-web/tax/version-13
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>├── .htaccess
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>├── Config
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>│   ├── config.json
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>│   ├── database.json
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>│   └── vhost-tax-v13.conf
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>├── Controllers
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>│   └── (the secondary controllers of version 12)
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>├── Entities
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>│   ├── Action.php
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>│   ├── ControllerResult.php
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>│   ├── Database.php
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>│   ├── ResponseType.php
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>│   ├── Simulation.php
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>│   ├── TaxAdminData.php
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>│   └── TaxException.php
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>├── Logs
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>│   └── logs.txt
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>├── Model
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a>│   ├── InterfaceServerBusiness.php
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>│   ├── InterfaceServerDao.php
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a>│   ├── ServerBusiness.php
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a>│   ├── ServerDao.php
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a>│   └── ServerDaoWithSession.php
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a>├── Responses
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a>│   └── (the response classes of version 12)
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a>├── Utilities
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a>│   ├── Logger.php
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a>│   ├── SendAdminMail.php
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a>│   ├── Utilities.php
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a>│   └── XmlUtilities.php
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a>├── Views
+<a id="__codelineno-2-33" name="__codelineno-2-33"></a>│   └── (the views of version 12, without the logo)
+<a id="__codelineno-2-34" name="__codelineno-2-34"></a>└── public
+<a id="__codelineno-2-35" name="__codelineno-2-35"></a>    ├── Resources
+<a id="__codelineno-2-36" name="__codelineno-2-36"></a>    │   └── logo.jpg
+<a id="__codelineno-2-37" name="__codelineno-2-37"></a>    ├── index.php
+<a id="__codelineno-2-38" name="__codelineno-2-38"></a>    └── main.php
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>nach <em>[public]</em>, den einzigen Ordner, der über das Web zugänglich sein wird. Er enthält die beiden Skripte <em>[index.php, main.php]</em> und, im Ordner <em>[Resources]</em>, das Bild <em>[logo.jpg]</em>. Der Name <em>[public]</em> ist der, den aktuelle PHP-Frameworks (Symfony, Laravel) für dieselbe Rolle verwenden;</li>
+<li>nach <em>[Config]</em>, die Konfigurationsdateien: <em>[config.json]</em> (früher <em>[Data/config.json]</em>) und <em>[database.json]</em>, die Datenbankkonfiguration, die in Version 8 aus dem Ordner <em>[Data]</em> übernommen wurde. Die Datei <em>[vhost-tax-v13.conf]</em> wird am Ende des Kapitels vorgestellt;</li>
+<li>nach <em>[Logs]</em>, die Logdatei, die sich im Ordner <em>[Data]</em> befand;</li>
+<li>und nach <em>[Model]</em>, die Klassen der Schichten <em>[business]</em> und <em>[dao]</em> des Servers. Bisher wurden sie aus den Ordnern der Versionen 8 und 9 geladen. Sie wurden nun in den Ordner der Version 13 kopiert, zusammen mit den Elementen <em>[TaxException, TaxAdminData, Database]</em> (Version 5) und den Hilfsklassen <em>[Logger, SendAdminMail]</em> (Version 9), <em>[XmlUtilities]</em> (Version 11) und <em>[Utilities]</em> (Version 5). Der Ordner <em>[version-13]</em> enthält somit die gesamte Anwendung: Er ist der einzige Ordner, der auf einen Produktionsserver kopiert würde, ohne auf Ordner anderer Versionen angewiesen zu sein;</li>
+<li>der Ordner <em>[Tests]</em> aus Version 12, der die Testseiten für die Views enthielt, wird nicht übernommen: Diese Seiten wären über das Web ohnehin nicht mehr erreichbar.</li>
+</ul>
+<p>Die Namen dieser Dateien ändern sich nicht, ebenso wenig ihr Inhalt, mit drei Ausnahmen, die wir gleich besprechen. Nur die Composer-Bibliothek <em>[vendor]</em> bleibt an ihrem ursprünglichen Ort, im Stammverzeichnis des Ordners <em>[php8-oct-2026]</em>.</p>
+<h2 id="243-codeanderungen">24.3. <span style="color: #2e74b5">Codeänderungen</span></h2>
+<h3 id="2431-die-konfigurationsdatei">24.3.1. <span style="color: #1f4d78">Die Konfigurationsdatei</span></h3>
+<p>Die Datei <em>[Config/config.json]</em> sieht dann wie folgt aus:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span>
+<span class="normal"><a href="#__codelineno-3-33">33</a></span>
+<span class="normal"><a href="#__codelineno-3-34">34</a></span>
+<span class="normal"><a href="#__codelineno-3-35">35</a></span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span>
+<span class="normal"><a href="#__codelineno-3-37">37</a></span>
+<span class="normal"><a href="#__codelineno-3-38">38</a></span>
+<span class="normal"><a href="#__codelineno-3-39">39</a></span>
+<span class="normal"><a href="#__codelineno-3-40">40</a></span>
+<span class="normal"><a href="#__codelineno-3-41">41</a></span>
+<span class="normal"><a href="#__codelineno-3-42">42</a></span>
+<span class="normal"><a href="#__codelineno-3-43">43</a></span>
+<span class="normal"><a href="#__codelineno-3-44">44</a></span>
+<span class="normal"><a href="#__codelineno-3-45">45</a></span>
+<span class="normal"><a href="#__codelineno-3-46">46</a></span>
+<span class="normal"><a href="#__codelineno-3-47">47</a></span>
+<span class="normal"><a href="#__codelineno-3-48">48</a></span>
+<span class="normal"><a href="#__codelineno-3-49">49</a></span>
+<span class="normal"><a href="#__codelineno-3-50">50</a></span>
+<span class="normal"><a href="#__codelineno-3-51">51</a></span>
+<span class="normal"><a href="#__codelineno-3-52">52</a></span>
+<span class="normal"><a href="#__codelineno-3-53">53</a></span>
+<span class="normal"><a href="#__codelineno-3-54">54</a></span>
+<span class="normal"><a href="#__codelineno-3-55">55</a></span>
+<span class="normal"><a href="#__codelineno-3-56">56</a></span>
+<span class="normal"><a href="#__codelineno-3-57">57</a></span>
+<span class="normal"><a href="#__codelineno-3-58">58</a></span>
+<span class="normal"><a href="#__codelineno-3-59">59</a></span>
+<span class="normal"><a href="#__codelineno-3-60">60</a></span>
+<span class="normal"><a href="#__codelineno-3-61">61</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="nt">"databaseFilename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Config/database.json"</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="nt">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">        </span><span class="s2">"Entities/TaxException.php"</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">        </span><span class="s2">"Entities/TaxAdminData.php"</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">        </span><span class="s2">"Entities/Database.php"</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">        </span><span class="s2">"Utilities/Utilities.php"</span><span class="p">,</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">        </span><span class="s2">"Model/InterfaceServerDao.php"</span><span class="p">,</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">        </span><span class="s2">"Model/ServerDao.php"</span><span class="p">,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">        </span><span class="s2">"Model/ServerDaoWithSession.php"</span><span class="p">,</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">        </span><span class="s2">"Model/InterfaceServerBusiness.php"</span><span class="p">,</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">        </span><span class="s2">"Model/ServerBusiness.php"</span><span class="p">,</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">        </span><span class="s2">"Utilities/Logger.php"</span><span class="p">,</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">        </span><span class="s2">"Utilities/SendAdminMail.php"</span><span class="p">,</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">        </span><span class="s2">"Utilities/XmlUtilities.php"</span><span class="p">,</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">        </span><span class="s2">"Entities/Simulation.php"</span><span class="p">,</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">        </span><span class="s2">"Entities/ControllerResult.php"</span><span class="p">,</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="w">        </span><span class="s2">"Entities/Action.php"</span><span class="p">,</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="w">        </span><span class="s2">"Entities/ResponseType.php"</span><span class="p">,</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="w">        </span><span class="s2">"Responses/InterfaceResponse.php"</span><span class="p">,</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="w">        </span><span class="s2">"Responses/ParentResponse.php"</span><span class="p">,</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="w">        </span><span class="s2">"Responses/JsonResponse.php"</span><span class="p">,</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="w">        </span><span class="s2">"Responses/XmlResponse.php"</span><span class="p">,</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="w">        </span><span class="s2">"Responses/HtmlResponse.php"</span><span class="p">,</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="w">        </span><span class="s2">"Controllers/InterfaceController.php"</span><span class="p">,</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="w">        </span><span class="s2">"Controllers/InitSessionController.php"</span><span class="p">,</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="w">        </span><span class="s2">"Controllers/AuthenticateUserController.php"</span><span class="p">,</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="w">        </span><span class="s2">"Controllers/CalculateTaxController.php"</span><span class="p">,</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="w">        </span><span class="s2">"Controllers/ListSimulationsController.php"</span><span class="p">,</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="w">        </span><span class="s2">"Controllers/DeleteSimulationController.php"</span><span class="p">,</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31"></a><span class="w">        </span><span class="s2">"Controllers/EndSessionController.php"</span><span class="p">,</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a><span class="w">        </span><span class="s2">"Controllers/DisplayTaxCalculationController.php"</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="w">    </span><span class="p">],</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="w">    </span><span class="nt">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="w">            </span><span class="nt">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a><span class="w">            </span><span class="nt">"passwd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39"></a><span class="w">    </span><span class="p">],</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40"></a><span class="w">    </span><span class="nt">"adminMail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="w">        </span><span class="nt">"smtp-server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost"</span><span class="p">,</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42"></a><span class="w">        </span><span class="nt">"smtp-port"</span><span class="p">:</span><span class="w"> </span><span class="mi">1025</span><span class="p">,</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43"></a><span class="w">        </span><span class="nt">"from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guest@localhost"</span><span class="p">,</span>
+<a id="__codelineno-3-44" name="__codelineno-3-44"></a><span class="w">        </span><span class="nt">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guest@localhost"</span><span class="p">,</span>
+<a id="__codelineno-3-45" name="__codelineno-3-45"></a><span class="w">        </span><span class="nt">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tax calculation server crash"</span><span class="p">,</span>
+<a id="__codelineno-3-46" name="__codelineno-3-46"></a><span class="w">        </span><span class="nt">"tls"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-3-47" name="__codelineno-3-47"></a><span class="w">        </span><span class="nt">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<a id="__codelineno-3-48" name="__codelineno-3-48"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-3-49" name="__codelineno-3-49"></a><span class="w">    </span><span class="nt">"logsFilename"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Logs/logs.txt"</span><span class="p">,</span>
+<a id="__codelineno-3-50" name="__codelineno-3-50"></a><span class="w">    </span><span class="nt">"redis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-51" name="__codelineno-3-51"></a><span class="w">        </span><span class="nt">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tcp"</span><span class="p">,</span>
+<a id="__codelineno-3-52" name="__codelineno-3-52"></a><span class="w">        </span><span class="nt">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span>
+<a id="__codelineno-3-53" name="__codelineno-3-53"></a><span class="w">        </span><span class="nt">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">6379</span>
+<a id="__codelineno-3-54" name="__codelineno-3-54"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-3-55" name="__codelineno-3-55"></a><span class="w">    </span><span class="nt">"views"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-56" name="__codelineno-3-56"></a><span class="w">        </span><span class="nt">"view-authentication.php"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">700</span><span class="p">,</span><span class="w"> </span><span class="mi">221</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">],</span>
+<a id="__codelineno-3-57" name="__codelineno-3-57"></a><span class="w">        </span><span class="nt">"view-tax-calculation.php"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">341</span><span class="p">,</span><span class="w"> </span><span class="mi">350</span><span class="p">,</span><span class="w"> </span><span class="mi">800</span><span class="p">],</span>
+<a id="__codelineno-3-58" name="__codelineno-3-58"></a><span class="w">        </span><span class="nt">"view-simulations-list.php"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">]</span>
+<a id="__codelineno-3-59" name="__codelineno-3-59"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-3-60" name="__codelineno-3-60"></a><span class="w">    </span><span class="nt">"view-errors"</span><span class="p">:</span><span class="w"> </span><span class="s2">"view-errors.php"</span>
+<a id="__codelineno-3-61" name="__codelineno-3-61"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Zeile 2: Die Datenbank-Konfigurationsdatei befindet sich nun im Ordner <em>[Config]</em> der Anwendung;</li>
+<li>Zeilen 3–33: Alle Anwendungsdateien liegen in den Ordnern der Version 13. Die Pfade sind relativ zum Stammordner der Anwendung, dem Ordner <em>[version-13]</em>;</li>
+<li>Zeile 49: Die Logdatei befindet sich im Ordner <em>[Logs]</em>.</li>
+</ul>
+<h3 id="2432-der-hauptcontroller-publicmainphp">24.3.2. <span style="color: #4f81bd"><span style="color: #1f4d78">Der Hauptcontroller </span><em>[public/main.php]</em></span></h3>
+<p>Der Hauptcontroller wurde in den Ordner <em>[public]</em> verschoben. Nur zwei Zeilen haben sich geändert:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="x">// PHP-Fehler werden nicht an den Client gesendet (sie gehen in das Log des Webservers)</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="x">ini_set("display_errors", "0");</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="x">// der Wurzelordner der Anwendung, übergeordnet zum Ordner [public]: die Pfade der Konfigurationsdatei sind relativ zu diesem Ordner</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="x">const ROOT_DIRECTORY = __DIR__ . "/..";</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="x">// Pfad der Konfigurationsdatei</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="x">const CONFIG_FILENAME = ROOT_DIRECTORY . "/Config/config.json";</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="x">// Autoloader von Composer (Symfony, Predis)</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="x">require_once ROOT_DIRECTORY . "/../../../vendor/autoload.php";</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Zeile 18: Die Konstante <em>[ROOT_DIRECTORY]</em> verweist weiterhin auf den Stammordner der Anwendung, relativ zu dem die Pfade in der Datei <em>[config.json]</em> definiert sind. Da sich das Skript nun im Ordner <em>[public]</em> befindet, ist dieser Stammordner der übergeordnete Ordner von <strong><em>[__DIR__]</em></strong>. Sie können nicht <strong><em>[dirname(__DIR__)]</em></strong> schreiben: Der Wert einer mit <em>[const]</em> deklarierten Konstante muss ein konstanter Ausdruck sein, und ein Funktionsaufruf ist keiner. Die Verkettung von <strong><em>[__DIR__]</em></strong> (einer Konstante) und einem String ist ein konstanter Ausdruck;</li>
+<li>Zeile 20: der neue Pfad zur Konfigurationsdatei;</li>
+<li>Zeile 23: Diese Zeile ändert sich nicht: Der Pfad zum Composer-Loader ist relativ zum Stammverzeichnis der Anwendung, das immer <em>[scripts-web/tax/version-13]</em> ist.</li>
+</ul>
+<p>Das Skript <em>[public/index.php]</em> ist das aus Version 12. Seine Weiterleitung auf die URL mit relativem Pfad über <em>[main.php?action=init-session&amp;type=html]</em> bleibt korrekt, da sich <em>[index.php]</em> und <em>[main.php]</em> im selben Ordner befinden.</p>
+<h3 id="2433-das-banner-der-views">24.3.3. <span style="color: #1f4d78">Das Banner der Views</span></h3>
+<p>Die Views bleiben im Ordner <em>[Views]</em>, außerhalb des Ordners <em>[public]</em>: Sie werden von der Klasse <em>[HtmlResponse]</em> über einen Festplattenpfad eingebunden (<strong><em>[__DIR__ . &quot;/../Views/$view&quot;]</em></strong>) und nicht vom Browser angefordert. Nur das Fragment <em>[v-banner.php]</em> ändert sich, weil das Logo verschoben wurde:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">&lt;?php</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c1">// Fragment: das obere Banner aller Views</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="c1">// Modell: [$model-&gt;logo] (optional) - die URL des Logos, relativ zur URL der angezeigten Seite [public/main.php]</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="cp">?&gt;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="x">&lt;!-- Banner: ein hellgrauer Rahmen mit abgerundeten Ecken --&gt;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="x">&lt;div class="p-4 my-4 bg-body-tertiary rounded-3"&gt;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="x">    &lt;div class="row align-items-center"&gt;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="x">        &lt;div class="col-md-4"&gt;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="x">            &lt;img src="</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$model</span><span class="o">-&gt;</span><span class="na">logo</span> <span class="o">??</span> <span class="s2">"Resources/logo.jpg"</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="x">" alt="Cherry tree in bloom"&gt;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="x">        &lt;/div&gt;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="x">        &lt;div class="col-md-8"&gt;</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="x">            &lt;h1&gt;Calculate your tax&lt;/h1&gt;</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="x">        &lt;/div&gt;</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="x">    &lt;/div&gt;</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="x">&lt;/div&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Zeile 9: Die URL des Logos ist relativ zur URL der angezeigten Seite, die immer die des Hauptcontrollers ist, <em>[.../version-13/public/main.php]</em>. Der Browser fordert daher die URL <em>[.../version-13/public/Resources/logo.jpg]</em> an.</li>
+</ul>
+<h2 id="244-die-datei-htaccess-der-anwendung">24.4. <span style="color: #4f81bd"><span style="color: #2e74b5">Die Datei </span><em>[.htaccess]</em><span style="color: #2e74b5"> der Anwendung</span></span></h2>
+<p>Mit <em>[Laragon]</em> ist das Dokumentenstammverzeichnis des Servers <em>[Apache]</em> (Direktive <em>[DocumentRoot]</em>) der Ordner <em>[www]</em>. Daher ist alles unterhalb von <em>[www]</em> über eine URL erreichbar, insbesondere der gesamte Ordner <em>[version-13]</em>. Um den Zugriff auf alles zu beschränken, was nicht im Ordner <em>[public]</em> liegt, verwenden wir eine einzige Datei <em>[.htaccess]</em> im Stammordner der Anwendung, im Ordner <em>[version-13]</em>. Beachten Sie, dass die Direktiven einer Datei <em>[.htaccess]</em> für den Ordner gelten, der sie enthält, und für alle seine Unterordner. <em>[Laragon]</em> konfiguriert <em>[Apache]</em> so, dass diese Dateien gelesen werden (Direktive <strong><em>[AllowOverride All]</em></strong>):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a># Version 13: nur der Ordner [public] der Anwendung ist über das Web erreichbar
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a># (Apache 2.4 - das Modul [mod_rewrite] muss aktiv sein, was bei Laragon der Fall ist)
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a># keine Auflistung des Inhalts der Ordner
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>Options -Indexes
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a># URL-Rewriting: die Muster werden mit dem URL-Pfad relativ zum Ordner [version-13] verglichen
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>RewriteEngine On
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a># die URL des Ordners der Anwendung [.../version-13/] wird auf den Ordner [public] umgeleitet
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a># %1: der Pfad der angeforderten URL ohne das abschließende /, erfasst durch die Bedingung [RewriteCond]
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>RewriteCond %{REQUEST_URI} ^(.*)/$
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a>RewriteRule ^$ %1/public/ [R=302,L]
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a># jede andere URL, die weder den Ordner [public] noch eine seiner Dateien bezeichnet, wird abgelehnt (403 Forbidden)
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a>RewriteRule !^public(/|$) - [F]
+</code></pre></div></td></tr></table></div>
+<p>Kommentare</p>
+<ul>
+<li>Zeile 5: Wenn eine URL einen Ordner angibt, der kein Standarddokument (<em>[index.php]</em>, <em>[index.html]</em>) besitzt, kann <em>[Apache]</em> die Liste der Dateien im Ordner anzeigen. Die Direktive <strong><em>[Options -Indexes]</em></strong> verhindert das;</li>
+<li>Zeile 8: Wir verwenden das Modul <em>[mod_rewrite]</em> von <em>[Apache]</em>, das Modul zum Umschreiben von URLs, das in <em>[Laragon]</em> standardmäßig aktiviert ist. Eine Regel <em>[RewriteRule]</em> hat die Form <strong><em>[RewriteRule pattern substitution [options]]</em></strong>. In einer Datei <em>[.htaccess]</em> wird das Muster – ein regulärer Ausdruck – mit dem Pfad der angeforderten URL verglichen, und zwar relativ zum Verzeichnis der Datei <em>[.htaccess]</em>. Für die URL <em>[http://localhost/php8-oct-2026/scripts-web/tax/version-13/Config/config.json]</em> lautet dieser Pfad <em>[Config/config.json]</em>;</li>
+<li>Zeilen 11–12: Die erste Regel verarbeitet die URL des Anwendungsordners <em>[.../version-13/]</em>, dessen relativer Pfad leer ist (Muster: [^$]). Sie leitet den Browser (Option <strong><em>[R=302]</em></strong>) auf den Ordner <em>[public]</em> um und beendet die Verarbeitung der Regeln (Option <strong><em>[L]</em></strong>, für „last“). Die Substitution muss ein vollständiger URL-Pfad sein: Er wird aus der Variablen <em>[REQUEST_URI]</em> von <em>[Apache]</em> gewonnen, dem Pfad der angeforderten URL <em>[/php8-oct-2026/scripts-web/tax/version-13/]</em>. Die der Regel vorangehende Bedingung <em>[RewriteCond]</em> vergleicht diese Variable mit dem regulären Ausdruck <strong><em>[^(.*)/$]</em></strong>: Der Teil in Klammern – der Pfad ohne den abschließenden Schrägstrich – steht dann in der Regel unter dem Namen <strong><em>[%1]</em></strong> zur Verfügung. So hängt die Datei <em>[.htaccess]</em> nicht vom Speicherort der Anwendung im Ordner <em>[www]</em> ab;</li>
+<li>Zeile 14: Die zweite Regel gilt für jede URL, deren relativer Pfad nicht mit <em>[public/]</em> beginnt und nicht genau <em>[public]</em> lautet: Das bedeutet das <strong><em>[!]</em></strong> vor dem Muster. Die Substitution <strong><em>[-]</em></strong> bedeutet „keine Substitution“, und die Option <strong><em>[F]</em></strong> (für „forbidden“) veranlasst <em>[Apache]</em>, mit dem Code <em>[403 Forbidden]</em> zu antworten. Die URL <em>[.../version-13/public]</em> ohne abschließenden Schrägstrich muss erlaubt bleiben: <em>[Apache]</em> (Modul <em>[mod_dir]</em>) antwortet darauf mit einer Weiterleitung auf <em>[.../version-13/public/]</em>.</li>
+</ul>
+<p>Diese Datei blockiert auch den Zugriff auf sich selbst: Sie befindet sich nicht im Ordner <em>[public]</em>. Da der Pfad einer URL von <em>[Apache]</em> normalisiert wird, bevor die Regeln angewendet werden, wird auch eine URL wie <em>[.../version-13/public/../Config/config.json]</em> abgelehnt.</p>
+<p>Der Kurs PHP 7 legte in jedem der zu schützenden Ordner eine Datei <em>[.htaccess]</em> mit den beiden Zeilen <strong><em>[order deny,allow]</em></strong> und <strong><em>[deny from all]</em></strong> ab. Das ist die Syntax von <em>[Apache]</em> 2.2. <em>[Apache]</em> 2.4 akzeptiert sie nur noch über das Kompatibilitätsmodul <em>[mod_access_compat]</em>, dessen Abschaffung geplant ist. Die Syntax für <em>[Apache]</em> 2.4 lautet <strong><em>[Require all denied]</em></strong>, die wir seit Version 8 verwenden.</p>
+<p>Wenn Sie das Modul <em>[mod_rewrite]</em> nicht verwenden möchten, gibt es eine mögliche Alternative mit zwei Dateien <em>[.htaccess]</em> und der Syntax <em>[Require]</em>:</p>
+<ul>
+<li>im Ordner <em>[version-13]</em> eine Datei namens <em>[.htaccess]</em> mit nur der Zeile <strong><em>[Require all denied]</em></strong>: Alles ist verboten;</li>
+<li>im Ordner <em>[public]</em> eine Datei namens <em>[.htaccess]</em> mit nur der Zeile <strong><em>[Require all granted]</em></strong>: Die Zugriffseinstellungen eines Unterordners überschreiben die des übergeordneten Ordners, und der gesamte Inhalt von <em>[public]</em> ist erlaubt.</li>
+</ul>
+<p>Diese Variante funktioniert ebenfalls, aber der Zugriff auf die URL <em>[.../version-13/]</em> wird dann verweigert, statt auf den Ordner <em>[public]</em> weitergeleitet zu werden.</p>
+<h3 id="2441-curl-tests">24.4.1. <span style="color: #4f81bd"><em>[curl]</em><span style="color: #1f4d78">-Tests</span></span></h3>
+<p>Anwendungsdateien außerhalb des Ordners <em>[public]</em> werden abgelehnt:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>&gt; curl -I http://localhost/php8-oct-2026/scripts-web/tax/version-13/Config/config.json
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>HTTP/1.1 403 Forbidden
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>Server: Apache/2.4.58
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>Content-Type: text/html; charset=iso-8859-1
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>&gt; curl -I http://localhost/php8-oct-2026/scripts-web/tax/version-13/Views/view-tax-calculation.php
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>HTTP/1.1 403 Forbidden
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>Server: Apache/2.4.58
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>Content-Type: text/html; charset=iso-8859-1
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a>&gt; curl -I http://localhost/php8-oct-2026/scripts-web/tax/version-13/Logs/logs.txt
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a>HTTP/1.1 403 Forbidden
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a>Server: Apache/2.4.58
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a>Content-Type: text/html; charset=iso-8859-1
+</code></pre></div></td></tr></table></div>
+<p>Der Code <em>[403 Forbidden]</em> entspricht der zweiten Regel. Beachten Sie, dass die View <em>[view-tax-calculation.php]</em> nicht einmal ausgeführt wurde. Die Dateien im Ordner <em>[public]</em> werden ausgeliefert:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span>
+<span class="normal"><a href="#__codelineno-8-16">16</a></span>
+<span class="normal"><a href="#__codelineno-8-17">17</a></span>
+<span class="normal"><a href="#__codelineno-8-18">18</a></span>
+<span class="normal"><a href="#__codelineno-8-19">19</a></span>
+<span class="normal"><a href="#__codelineno-8-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>&gt; curl -i "http://localhost/php8-oct-2026/scripts-web/tax/version-13/public/main.php?action=init-session&amp;type=json"
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>HTTP/1.0 200 OK
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>Server: Apache/2.4.58
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>X-Powered-By: PHP/8.5.11
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>Cache-Control: max-age=0, private, must-revalidate
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>Set-Cookie: PHPSESSID=cf229e8b3c335cdf3e9e94f7919e8f9f; path=/
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a>Cache-Control: no-cache, private
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a>Connection: close
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a>Content-Type: application/json; charset=utf-8
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a>{"action":"init-session","status":700,"response":"session started with type [json]"}
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a>&gt; curl -I http://localhost/php8-oct-2026/scripts-web/tax/version-13/public/Resources/logo.jpg
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a>HTTP/1.1 200 OK
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a>Server: Apache/2.4.58
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a>Last-Modified: Thu, 01 Oct 2026 16:39:23 GMT
+<a id="__codelineno-8-17" name="__codelineno-8-17"></a>ETag: "1410-65cca0eef010c"
+<a id="__codelineno-8-18" name="__codelineno-8-18"></a>Accept-Ranges: bytes
+<a id="__codelineno-8-19" name="__codelineno-8-19"></a>Content-Length: 5136
+<a id="__codelineno-8-20" name="__codelineno-8-20"></a>Content-Type: image/jpeg
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Zeilen 1–11: Der Hauptcontroller antwortet normal: Die JSON-Sitzung wird gestartet;</li>
+<li>Zeilen 13–20: Das Logo wird ausgeliefert (Typ <em>[image/jpeg]</em>).</li>
+</ul>
+<p>Schließlich wird die URL der Anwendung auf den Ordner <em>[public]</em> umgeleitet, dessen Skript <em>[index.php]</em> seinerseits auf den Hauptcontroller weiterleitet:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>&gt; curl -I http://localhost/php8-oct-2026/scripts-web/tax/version-13/
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>HTTP/1.1 302 Found
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>Server: Apache/2.4.58
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>Location: http://localhost/php8-oct-2026/scripts-web/tax/version-13/public/
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>Content-Type: text/html; charset=iso-8859-1
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>&gt; curl -I http://localhost/php8-oct-2026/scripts-web/tax/version-13/public/
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>HTTP/1.1 302 Found
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a>Server: Apache/2.4.58
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a>X-Powered-By: PHP/8.5.11
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a>Location: main.php?action=init-session&amp;type=html
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a>Content-Type: text/html; charset=UTF-8
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Zeile 4: die Weiterleitung der ersten Regel in der Datei <em>[.htaccess]</em>;</li>
+<li>Zeile 11: die Weiterleitung durch das Skript <em>[public/index.php]</em>.</li>
+</ul>
+<p>In einem Browser lautet die URL, die die HTML-Anwendung startet, nun <em>[http://localhost/php8-oct-2026/scripts-web/tax/version-13/]</em>. Nach den beiden Weiterleitungen erscheint die Authentifizierungsseite samt Logo:</p>
+<p><img src="images/1000000000000500000001F41DA037C6.png" width="529" height="207" style="width:14cm;height:5.47cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000500000001F41DA037C6.png" /></p>
+<p>Die Anwendung funktioniert genauso wie die in Version 12. Hier ist der Bildschirm der Steuerberechnung nach einer Simulation:</p>
+<p><img src="images/1000000000000500000002BC2D233DD6.png" width="529" height="289" style="width:14cm;height:7.655cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000500000002BC2D233DD6.png" /></p>
+<p>Die URL, die die Clients für JSON und XML anfordern, hat sich geändert: Der Hauptcontroller ist nun <em>[.../version-13/public/main.php]</em>. Um den JSON-Client aus Version 12 mit dem Server der Version 13 zu verwenden, ändern Sie einfach den Schlüssel <em>[urlServer]</em> in seiner Konfigurationsdatei.</p>
+<h2 id="245-in-der-produktion-das-dokumentenstammverzeichnis-ist-der-ordner-public">24.5. <span style="color: #4f81bd"><span style="color: #2e74b5">In der Produktion: Das Dokumentenstammverzeichnis ist der Ordner </span><em>[public]</em></span></h2>
+<p>Die Datei <em>[.htaccess]</em> ist eine Lösung, die auf <em>[Laragon]</em> zugeschnitten ist, wo ein einziger Ordner, <em>[www]</em>, mehrere Anwendungen enthält. Auf einem Produktionsserver ist das Vorgehen anders: Der Ordner <em>[public]</em> wird zum Dokumentenstammverzeichnis der Website gemacht. Der Rest der Anwendung liegt dann außerhalb der Verzeichnisstruktur der Website: Keine URL kann darauf zugreifen, und es sind keine Regeln nötig. Diese Organisation wird von den PHP-Frameworks empfohlen.</p>
+<p>Mit <em>[Apache]</em> definieren Sie dazu einen virtuellen Host, d. h. eine zusätzliche Website, die vom selben Server <em>[Apache]</em> bereitgestellt wird. Die Datei <em>[Config/vhost-tax-v13.conf]</em> liefert ein Beispiel:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a># ein virtueller Apache-Host, dessen Document Root der Ordner [public] von Version 13 ist
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a># im Ordner [&lt;laragon&gt;/etc/apache2/sites-enabled] abzulegen (Pfade anpassen)
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a># die Anwendung ist dann unter der URL [http://localhost:8013/] erreichbar
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>Listen 8013
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>&lt;VirtualHost *:8013&gt;
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>    # das Document Root: nur der Inhalt von [public] ist über das Web erreichbar
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>    DocumentRoot "C:/laragon/www/php8-oct-2026/scripts-web/tax/version-13/public"
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a>    &lt;Directory "C:/laragon/www/php8-oct-2026/scripts-web/tax/version-13/public"&gt;
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a>        # keine zu lesende [.htaccess]-Datei: die Konfiguration steht hier
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a>        AllowOverride None
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a>        Options -Indexes
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a>        Require all granted
+<a id="__codelineno-10-13" name="__codelineno-10-13"></a>    &lt;/Directory&gt;
+<a id="__codelineno-10-14" name="__codelineno-10-14"></a>&lt;/VirtualHost&gt;
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Zeile 4: <em>[Apache]</em> lauscht auch auf Port 8013. Ein virtueller Host lässt sich von anderen durch seinen Port unterscheiden, wie hier gezeigt, oder durch seinen Namen (<em>[tax.test],</em> zum Beispiel). Die Verwendung des Ports erspart es, einen neuen Hostnamen zu deklarieren;</li>
+<li>Zeilen 5–14: Die Konfiguration des virtuellen Hosts, der auf Anfragen an Port 8013 antwortet;</li>
+<li>Zeile 7: Das Dokumentenstammverzeichnis dieser Website ist der Ordner <em>[public]</em> der Version 13. Die URL <em>[http://localhost:8013/main.php]</em> bezeichnet daher die Datei <em>[public/main.php]</em>;</li>
+<li>Zeilen 8–13: Zugriffsrechte für den Ordner <em>[public]</em>. <strong><em>[AllowOverride None]</em></strong> teilt <em>[Apache]</em> mit, dass er nicht nach Dateien <em>[.htaccess]</em> suchen muss: Die gesamte Konfiguration steht hier, was auch schneller ist.</li>
+</ul>
+<p>Legen Sie in <em>[Laragon]</em> eine solche Datei – mit angepassten Pfaden zum Installationsordner von <em>[Laragon]</em> – im Ordner <em>[&lt;laragon&gt;/etc/apache2/sites-enabled]</em> ab und starten Sie dann <em>[Apache]</em> im Fenster von <em>[Laragon]</em> neu (klicken Sie auf die Schaltfläche <em>[Stop]</em>, dann auf die Schaltfläche <em>[Start All]</em> ). Sie erhalten dann:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span>
+<span class="normal"><a href="#__codelineno-11-15">15</a></span>
+<span class="normal"><a href="#__codelineno-11-16">16</a></span>
+<span class="normal"><a href="#__codelineno-11-17">17</a></span>
+<span class="normal"><a href="#__codelineno-11-18">18</a></span>
+<span class="normal"><a href="#__codelineno-11-19">19</a></span>
+<span class="normal"><a href="#__codelineno-11-20">20</a></span>
+<span class="normal"><a href="#__codelineno-11-21">21</a></span>
+<span class="normal"><a href="#__codelineno-11-22">22</a></span>
+<span class="normal"><a href="#__codelineno-11-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>&gt; curl -I http://localhost:8013/
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>HTTP/1.1 302 Found
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>Server: Apache/2.4.58
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>X-Powered-By: PHP/8.5.11
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a>Location: main.php?action=init-session&amp;type=html
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a>Content-Type: text/html; charset=UTF-8
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>&gt; curl "http://localhost:8013/main.php?action=init-session&amp;type=json"
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>{"action":"init-session","status":700,"response":"session started with type [json]"}
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a>&gt; curl -I http://localhost:8013/Resources/logo.jpg
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a>HTTP/1.1 200 OK
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a>Server: Apache/2.4.58
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a>Last-Modified: Thu, 01 Oct 2026 16:39:23 GMT
+<a id="__codelineno-11-15" name="__codelineno-11-15"></a>ETag: "1410-65cca0eef010c"
+<a id="__codelineno-11-16" name="__codelineno-11-16"></a>Accept-Ranges: bytes
+<a id="__codelineno-11-17" name="__codelineno-11-17"></a>Content-Length: 5136
+<a id="__codelineno-11-18" name="__codelineno-11-18"></a>Content-Type: image/jpeg
+<a id="__codelineno-11-19" name="__codelineno-11-19"></a>
+<a id="__codelineno-11-20" name="__codelineno-11-20"></a>&gt; curl -I http://localhost:8013/Config/config.json
+<a id="__codelineno-11-21" name="__codelineno-11-21"></a>HTTP/1.1 404 Not Found
+<a id="__codelineno-11-22" name="__codelineno-11-22"></a>Server: Apache/2.4.58
+<a id="__codelineno-11-23" name="__codelineno-11-23"></a>Content-Type: text/html; charset=iso-8859-1
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>Zeilen 1–6: Die URL der Website wird vom Skript <em>[public/index.php]</em> bedient;</li>
+<li>Zeilen 8–9: Der Hauptcontroller antwortet normal;</li>
+<li>Zeilen 11–18: Das Logo wird ausgeliefert;</li>
+<li>Zeilen 20–23: Die Konfigurationsdatei wird nicht mehr abgelehnt; für den Webserver existiert sie schlicht nicht: Die Antwort lautet <em>[404 Not Found]</em>. Die Datei <em>[.htaccess]</em> im Ordner <em>[version-13]</em> wird nicht gelesen, da sie außerhalb des Dokumentenstammverzeichnisses liegt.</li>
+</ul>
+<p>In beiden Fällen – ob mit <em>[Laragon]</em> und der Datei <em>[.htaccess]</em> oder mit einem virtuellen Host, dessen Wurzel der Ordner <em>[public]</em> ist – bleibt der Anwendungscode derselbe. Das ist der Vorteil der neuen Verzeichnisstruktur: Öffentliche Inhalte sind in einem einzigen Ordner gebündelt, und alles andere ist standardmäßig geschützt.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Dieses Tutorial, geschrieben von der KI <strong>Claude</strong> von Anthropic im Auftrag von <strong>Serge Tahé</strong>, wird der Öffentlichkeit unter den Bedingungen der Lizenz
+        <em>Creative Commons Namensnennung – Nicht kommerziell –
+        Weitergabe unter gleichen Bedingungen 3.0 Unported</em> zur Verfügung gestellt.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
